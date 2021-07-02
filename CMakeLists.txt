@@ -1,0 +1,45 @@
+cmake_minimum_required(VERSION 3.17)
+project(Proga C)
+
+set(CMAKE_C_STANDARD 11)
+add_executable(lab01 lab1.c)
+add_executable(lab02 lab2.c)
+add_executable(lab03 lab3.c)
+add_executable(lab04 lab4.c)
+add_executable(lab05 lab5.c)
+add_executable(lab06 lab6.c)
+add_executable(lab07 lab7.c)
+add_executable(lab08.1 lab8.1.c)
+add_executable(lab08.3 lab8.3.c)
+add_executable(lab08.5 lab8.5.c)
+add_executable(lab08.7 lab8.7.c)
+add_executable(lab08.9 lab8.9.c)
+add_executable(lab09.1 lab9.1.c)
+add_executable(lab09.2 lab9.2.c)
+add_executable(lab10.1 lab10.1.c)
+add_executable(lab10.2 lab10.2.c)
+add_executable(lab11 lab11.c lab11Rect.c lab11Rect.h)
+add_executable(lab12 lab12.c)
+add_executable(lab13 lab13.c)
+
+add_library(files56 lib56/files.c lib56/files.h)
+add_library(fileBmp56 lib56/file/bmp.c lib56/file/bmp.h)
+add_library(parseInt56 lib56/parseInt.c lib56/parseInt.h)
+add_library(stringsCompare56 lib56/stringsCompare.c lib56/stringsCompare.h)
+add_library(stringCopy56 lib56/stringCopy.c lib56/stringCopy.h)
+
+add_executable(lab14b lab14b.c)
+target_link_libraries(lab14b files56 parseInt56 stringsCompare56 fileBmp56)
+
+set(OpenCL_INCLUDE_DIR include)
+set(OpenCL_LIBRARY C:/Workspace/CLion/itmo_1_prog/lib/OpenCL.lib) # SELECT YOUR PATH
+
+find_package(OpenCL REQUIRED)
+include_directories(${OpenCL_INCLUDE_DIRS})
+
+add_executable (lab14 lab14.c)
+target_include_directories (lab14 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries (lab14 ${OpenCL_LIBRARY} files56 parseInt56 stringsCompare56 fileBmp56 stringCopy56)
+
+add_executable(lab15 lab15.c)
+target_link_libraries(lab15 files56 stringsCompare56)
