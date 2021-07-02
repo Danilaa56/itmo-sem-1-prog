@@ -10,9 +10,9 @@
 
 Например:
 
-app.exe --filepath=Song.mp3 --show  
-app.exe --filepath=Song.mp3 --get=TIT2
-app.exe --filepath=Song.mp3 --set=COMM --value=Test
++ app.exe --filepath=Song.mp3 --show  
++ app.exe --filepath=Song.mp3 --get=TIT2
++ app.exe --filepath=Song.mp3 --set=COMM --value=Test
 
 
 Примечание.
